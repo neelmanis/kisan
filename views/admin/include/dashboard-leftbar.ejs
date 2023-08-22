@@ -1,0 +1,113 @@
+ <!-- Left Sidenav -->
+ <div class="left-sidenav">
+    <!-- LOGO -->
+    <div class="brand text-start p-3">
+        <a href="/admin/dashboard" class="logo">
+            <!-- <span><img src="" alt="logo-small" class="logo-sm"></span> -->
+            <span class="d-inline-block ml-4" style="font-size:20px;display:inline-block;margin-left:20px;color:#fff">ADMIN PANEL</span>
+        </a>
+    </div>
+    <!--end logo-->
+    <div class="menu-content h-100" data-simplebar>
+        <ul class="metismenu left-sidenav-menu">
+            <hr class="hr-dashed hr-menu">
+            <li class="menu-label my-2"></li>            
+            <li><a href="/admin/dashboard"> <i data-feather="home" class="align-self-center menu-icon"></i><span>Dashboard</span></a></li>
+            <li>
+                <a href="javascript: void(0);"><i data-feather="grid" class="align-self-center menu-icon"></i><span>Masters</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">                   
+                    <li class="nav-item"><a class="nav-link" href="/useri"><i class="ti-control-record"></i>User</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/news"><i class="ti-control-record"></i>News</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="/admin/dairy/dairy-list"><i class="ti-control-record"></i>Fertilizers/Dairy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/admin/animal/animal-list"><i class="ti-control-record"></i>Animal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/admin/equipment/equipment-list"><i class="ti-control-record"></i>Equipments</a></li> -->
+                </ul>
+            </li> 
+
+            <li>
+                <a href="javascript: void(0);"><i data-feather="lock" class="align-self-center menu-icon"></i><span>Admin Permissions</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                   
+                    <li class="nav-item"><a class="nav-link" href="/admin/user-list"><i class="ti-control-record"></i>Users</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="ti-control-record"></i>Roles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="ti-control-record"></i>Roles & Permissions</a></li> -->
+                    
+                </ul>
+            </li> 
+
+            <!-- <hr class="hr-dashed hr-menu">
+            <li class="menu-label my-2">Manage Frontend</li>
+
+            <li>
+                <a href="javascript: void(0);"><i data-feather="box" class="align-self-center menu-icon"></i><span>Section</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li>
+                        <a href="/admin/ticker/ticker-list"><i class="ti-control-record"></i>Manage Ticker </a>
+                        <a href="/user/user-list"><i class="ti-control-record"></i>Registered Users </a>
+                        <a href="/admin/veternary/veternary-list"><i class="ti-control-record"></i>Manage Veternary </a>
+                    </li>  
+                </ul>                        
+            </li>
+
+            <li>
+                <a href="javascript: void(0);"><i data-feather="box" class="align-self-center menu-icon"></i><span>Animals</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li>
+                        <a href="/admin/animal/listed-animals"><i class="ti-control-record"></i>Listed Animals</a>
+                    </li>  
+                </ul>                        
+            </li>
+            <li>
+                <a href="javascript: void(0);"><i data-feather="box" class="align-self-center menu-icon"></i><span>Crops</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li>
+                        <a href="/admin/crop/listed-crops"><i class="ti-control-record"></i>Listed Crops</a>
+                    </li>  
+                </ul>                        
+            </li>
+           <%# <li>
+                <a href="javascript: void(0);"><i data-feather="box" class="align-self-center menu-icon"></i><span>Fruits / Vegitables</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li>
+                        <a href="/admin/fruit/listed-fruits"><i class="ti-control-record"></i>Listed Fruits/Vegitables</a>
+                    </li>  
+                </ul>                        
+            </li> %>
+            <li>
+                <a href="javascript: void(0);"><i data-feather="box" class="align-self-center menu-icon"></i><span>Dairy</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li>
+                        <a href="/admin/dairy/listed-dairy"><i class="ti-control-record"></i>Listed Dairy </a>
+                    </li>  
+                </ul>                        
+            </li>
+             <li>
+                <a href="javascript: void(0);"><i data-feather="box" class="align-self-center menu-icon"></i><span>Fertilizers</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li>
+                        <a href="/admin/fertilizer/listed-fertilizer"><i class="ti-control-record"></i>Listed Fertilizers</a>
+                    </li>  
+                </ul>                        
+            </li>
+
+            <li>
+                <a href="javascript: void(0);"><i data-feather="box" class="align-self-center menu-icon"></i><span>Equipments</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li>
+                        <a href="/admin/equipment/listed-equipments"><i class="ti-control-record"></i>Listed Equipments</a>
+                    </li>  
+                </ul>                        
+            </li>
+
+            <li>
+                <a href="javascript: void(0);"><i data-feather="box" class="align-self-center menu-icon"></i><span>Community</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                <ul class="nav-second-level" aria-expanded="false">
+                    <li>
+                        <a href="/admin/community/topic-list"><i class="ti-control-record"></i>Listed Topics</a>
+                    </li>  
+                </ul>                        
+            </li> -->
+        </ul>
+    </div>
+</div>
+<!-- end left-sidenav-->

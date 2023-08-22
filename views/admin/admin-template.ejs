@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title><%= pageTitle %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="#">
+    <!-- jvectormap -->
+    <link href="<%= nodeSiteUrl %>plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+
+    <!-- Datatable css -->
+    <!-- <link href="<%= nodeSiteUrl %>plugins/datatables/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="<%= nodeSiteUrl %>plugins/datatables/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css" />
+    
+    <!-- App css -->
+    <link href="<%= nodeSiteUrl %>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<%= nodeSiteUrl %>assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="<%= nodeSiteUrl %>assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+    <link href="<%= nodeSiteUrl %>plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+   
+
+    <link href="<%= nodeSiteUrl %>assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="<%= nodeSiteUrl %>assets/css/custom.css" rel="stylesheet" type="text/css" />
+
+    
+    <script>
+        let WEB_ROOT = "<%= nodeSiteUrl %>";
+    </script>
+</head>
+<body class="dark-sidenav">
+    <!-- Left Sidenav -->
+    <%- include('./include/dashboard-leftbar.ejs'); %>
+    <!-- end left-sidenav-->
+    <div class="page-wrapper">
+        <!-- Top Bar Start -->
+        <%- include('./include/dashboard-topbar.ejs'); %>
+        <!-- Top Bar End -->
+        <!-- Page Content-->
+        <div class="page-content">
+        <%- include('./'+viewFile); %>
+        <%- include('./include/dashboard-footer.ejs'); %>
+        </div>
+        <!-- end page content -->
+    </div>
+    <!-- end page-wrapper -->
+    <!-- jQuery  -->
+    <script src="<%= nodeSiteUrl %>assets/js/jquery.min.js"></script>
+    <script src="<%= nodeSiteUrl %>assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<%= nodeSiteUrl %>assets/js/metismenu.min.js"></script>
+    <script src="<%= nodeSiteUrl %>assets/js/waves.js"></script>
+    <script src="<%= nodeSiteUrl %>assets/js/feather.min.js"></script>
+    <script src="<%= nodeSiteUrl %>assets/js/sweetalert.min.js"></script>
+    <!-- Required datatable js -->
+    <script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
+    <!-- <script src="<%= nodeSiteUrl %>plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="<%= nodeSiteUrl %>plugins/datatables/dataTables.bootstrap5.min.js"></script> -->
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+   
+    <!-- App js -->
+    <script src="<%= nodeSiteUrl %>/assets/js/app.js"></script>
+    <script src="<%= nodeSiteUrl %>assets/custom-js/ajax-call.js?v=1.1"></script>
+    <script src="<%= nodeSiteUrl %>assets/custom-js/ajax-datatable.js"></script>
+    <% if(typeof scriptFile !=="undefined"){ %>
+        <script src="<%= nodeSiteUrl %>assets/custom-js/<%= scriptFile %>.js"></script>
+    <% } %>
+
+    <% if(typeof scriptFile !=="undefined" && scriptFile =="news"){ %>
+    <script type="text/javascript" src="<%= nodeSiteUrl %>assets/ckeditor_ckfinder/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="<%= nodeSiteUrl %>assets/ckeditor_ckfinder/ckfinder/ckfinder.js"></script>
+    <script type="text/javascript">
+        var baseUrl = '<%= nodeSiteUrl %>';
+        var areas = Array('content');
+            $.each(areas, function (i, area) {
+            CKEDITOR.replace(area, {
+            filebrowserBrowseUrl :  baseUrl+'assets/ckeditor_ckfinder/ckfinder/ckfinder.html',
+            filebrowserImageBrowseUrl :  baseUrl+'assets/ckeditor_ckfinder/ckfinder/ckfinder.html?type=Images',
+            filebrowserFlashBrowseUrl :  baseUrl+'assets/ckeditor_ckfinder/ckfinder/ckfinder.html?type=Flash',
+            filebrowserUploadUrl : baseUrl+'assets/ckeditor_ckfinder/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+            filebrowserImageUploadUrl : baseUrl+'assets/ckeditor_ckfinder/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+            filebrowserFlashUploadUrl : baseUrl+'assets/ckeditor_ckfinder/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+            });
+        });
+        </script>
+        <% } %>
+</body>
+</html>

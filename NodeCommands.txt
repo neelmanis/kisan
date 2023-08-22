@@ -1,0 +1,37 @@
+Commands : Node JS API Development : 
+
+- npm init -y                                    # install package.json
+- npm install nodemon --save-dev				 # Execute on runtime   npm run start
+
+
+- npm install dotenv							 # 
+- npm install --save mysql2                      # Install Mysql 
+- npm i install mysql
+- npm install body-parser                        # To parse post data 
+- npm install cookie-parser                      # To parse cookie data 
+- npm install express-validator                  # Validation on request 
+- npm install connect-session-sequelize
+- npm install express-session 				 	 # Store session data
+- npm install express-partials
+- npm i connect-flash				
+- npm install express-mysql-session
+- npm install jsonwebtoken						# JSON Web Tokens.
+
+// Admin setup module 
+- npm install ejs                                # For Express template file extension 
+- npm i bcrypt
+- npm i sequelize
+- npm install --save mysql2
+- npm install --save express-fileupload          # For file uploading 
+
+/* https://www.youtube.com/watch?v=jkQdEvPf-uI */
+
+
+console.log("User name = "+user_name+", password is "+password);
+
+router.post("/create-news", (req, res) => {
+    console.log('hhhi')
+}, uploadPic,news.updateNEWSValidation,news.createNewsAction);  // GET user details for Update 
+
+
+		

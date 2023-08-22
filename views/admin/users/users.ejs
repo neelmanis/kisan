@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User List</title>
+  <style>
+    /* Some basic styling for demonstration purposes */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>User List</h1>
+  
+<h2>Search</h2>
+<form action="users" method="POST">
+  <input type="text" name="search" value="<%= search %>" placeholder="Search by name...">
+  <button type="submit">Search</button>
+</form>
+
+<h2>Filter by Age</h2>
+<form action="users" method="POST">
+  <select name="filterAge">
+    <option value="">All</option>
+    <option value="18" <%= filterAge === '18' ? 'selected' : '' %>>18</option>
+    <option value="25" <%= filterAge === '25' ? 'selected' : '' %>>25</option>
+    <option value="30" <%= filterAge === '30' ? 'selected' : '' %>>30</option>
+  </select>
+  <button type="submit">Filter</button>
+  <button type="button" onclick="window.location.href='users'">Reset</button>
+</form>
+  <table>
+    <thead>
+      <tr>
+        <th><a href="users?page=<%= currentPage %>&limit=<%= limit %>&search=<%= search %>&sortField=name&sortOrder=<%= sortOrder === 'ASC' && sortField === 'name' ? 'DESC' : 'ASC' %>"> Name</a></th>
+        <th><a href="users?page=<%= currentPage %>&limit=<%= limit %>&search=<%= search %>&sortField=email&sortOrder=<%= sortOrder === 'ASC' && sortField === 'email' ? 'DESC' : 'ASC' %>">Email</a></th>
+        <th><a href="users?page=<%= currentPage %>&limit=<%= limit %>&search=<%= search %>&sortField=age&sortOrder=<%= sortOrder === 'ASC' && sortField === 'age' ? 'DESC' : 'ASC' %>">Age</a></th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.age %></td>
+          <td><a href="users/<%= user.id %>">Views</a></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <% if (totalPages > 1) { %>
+    <div>
+      <% if (currentPage > 1) { %>
+        <a href="users?page=<%= currentPage - 1 %>&limit=<%= limit %>">Previous</a>
+      <% } %>
+
+      <% for (let i = 1; i <= totalPages; i++) { %>
+        <a href="users?page=<%= i %>&limit=<%= limit %>" <%= currentPage === i ? 'style="font-weight:bold;"' : '' %>><%= i %></a>
+      <% } %>
+
+      <% if (currentPage < totalPages) { %>
+        <a href="users?page=<%= currentPage + 1 %>&limit=<%= limit %>">Next</a>
+      <% } %>
+    </div>
+  <% } %>
+</body>
+</html>

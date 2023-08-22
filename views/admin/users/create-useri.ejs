@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-title-box">
+                <div class="row ">
+                    <div class=" col d-flex justify-content-between">
+                        <h4 class="page-title mb-2"><%= pageTitle %></h4>
+                        <ol class="breadcrumb justify-content-end">
+                            <li class="breadcrumb-item"><a href="/admin/useri">Users</a> <i class="mdi mdi-chevron-right"></i></li>
+                            <li class="breadcrumb-item active"><%= pageTitle %></li>
+                        </ol>
+                    </div><!--end col-->               
+                </div><!--end row-->                                                              
+            </div><!--end page-title-box-->
+        </div><!--end col-->
+    </div><!--end row-->
+    <!-- end page title end breadcrumb -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                    <h4 class="card-title"><span class="badge bg-soft-success font-12">Create  User</span></h4>
+                    <a class=" btn btn-sm btn-soft-primary" href="/admin/useri" role="button"><i class="fas fa-plus me-2"></i>User List</a>
+                    </div>
+                </div><!--end card-header-->
+                <div class="card-body">
+                    <form id="addUser">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="e.g. John Doe" value=""  autocomplete="off" autofocus="off" autosave="off">
+                            <label for="name" data-title="Name" >Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="email" id="email" placeholder="e.g. Email" value=""  autocomplete="off" autofocus="off" autosave="off">
+                            <label for="email" data-title="E-mail Id">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="hidden" name="status" id="status" value="1" >
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                        
+                    </form>
+                </div><!--end card-body-->
+            </div><!--end card-->
+        </div><!--end col-->
+    </div>
+  </div><!-- container -->
+  
+  

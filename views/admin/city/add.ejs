@@ -1,0 +1,206 @@
+<!-- BEGIN: Content-->
+<div class="app-content content">
+  <div class="content-overlay"></div>
+  <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+      <div class="content-header row">
+    </div>
+
+    <div class="content-body">
+      <!-- users edit start -->
+      <section class="users-edit">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <!-- users edit account form start -->
+              <form id="addNgoForm" enctype="multipart/form-data">
+
+                <!-- users edit media object start -->
+                <div class="media mb-2">
+                  <img
+                    src="/admin/app-assets/images/sample.png"
+                    class="rounded mr-75"
+                    alt="profile image"
+                    height="64"
+                    width="64"
+                  />
+
+                  <div class="media-body mt-75">
+                    <div
+                      class="col-12 px-0 d-flex flex-sm-row flex-column justify-content-start" >
+                      <label
+                        class="btn btn-sm btn-primary ml-50 mb-50 mb-sm-0 cursor-pointer pic-uploader"
+                        for="pic">Upload new photo</label>
+                      <input type="file" id="pic" name="photo" hidden/>
+                      <span class="pic-name badge badge-info badge-md ml-50"></span>
+                      <button type="button" class="btn btn-sm btn-outline-danger ml-50" id="remove-pic">Remove</button>
+                    </div>
+
+                    <p class="text-muted ml-75 mt-50">
+                      <small>Allowed JPG, GIF or PNG. Max size of 1mb</small>
+                      <label for="photo" class="error invalid-feedback"></label>
+                    </p>
+                  </div>
+                </div>
+                <!-- users edit media object ends -->
+
+                <div class="row">
+
+                  <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                      <div class="controls">
+                        <label>Name</label>
+                        <input 
+                          type="text" 
+                          id="name"
+                          name="name"
+                          class="form-control" 
+                          placeholder="Name" />
+                        <label for="name" class="error invalid-feedback"></label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="controls">
+                        <label>Slug</label>
+                        <input 
+                          type="text" 
+                          id="slug"
+                          name="slug"
+                          class="form-control" 
+                          placeholder="Slug" />
+                        <label for="slug" class="error invalid-feedback"></label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="controls">
+                        <label>Location</label>
+                        <input 
+                          type="text" 
+                          id="location"
+                          name="location"
+                          class="form-control" 
+                          placeholder="Location" />
+                        <label for="location" class="error invalid-feedback"></label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="controls">
+                        <label>Donation</label>
+                        <input 
+                          type="text" 
+                          id="donation"
+                          name="donation"
+                          class="form-control" 
+                          placeholder="Donation" />
+                        <label for="donation" class="error invalid-feedback"></label>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="col-12 col-sm-6">
+
+                    <div class="form-group">
+                      <div class="controls">
+                        <label>Cause</label>
+                        <select 
+                          class="form-control"
+                          id="causeId"
+                          name="causeId" >
+                          <option value="">Select</option>
+
+                          <% if( causes.length > 0 ){  %> 
+                            <%  for (let item of causes ) { %> 
+                            <option value="<%= item.causeId %>"><%= item.name %></option>
+                            <% } %> 
+                          <% } %> 
+                        </select>
+                        <label for="causeId" class="error invalid-feedback"></label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="controls">
+                        <label>Featured</label>
+                        <select 
+                          class="form-control"
+                          id="isFeatured"
+                          name="isFeatured" >
+                          <option value="">Select</option>
+                          <option value="yes">Yes</option>
+                          <option value="no" selected>No</option>
+                        </select>
+                        <label for="isFeatured" class="error invalid-feedback"></label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="controls">
+                        <label>Status</label>
+                        <select 
+                          class="form-control"
+                          id="status"
+                          name="status" >
+                          <option value="">Select</option>
+                          <option value="active" selected>Active</option>
+                          <option value="deactive">Deactive</option>
+                        </select>
+                        <label for="status" class="error invalid-feedback"></label>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="col-12">
+
+                    <div class="form-group">
+                      <div class="controls">
+                        <label>Description</label>
+                        <textarea 
+                          id="description"
+                          name="description"
+                          class="form-control" 
+                          rows="5"
+                          placeholder="Description"></textarea>
+                        <label for="description" class="error invalid-feedback"></label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="controls">
+                        <label>Quote</label>
+                        <textarea 
+                          id="quote"
+                          name="quote"
+                          class="form-control" 
+                          rows="4"
+                          placeholder="Quote"></textarea>
+                        <label for="quote" class="error invalid-feedback"></label>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="col-12 d-flex flex-sm-row flex-column mt-1">
+                    <button type="submit" class="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1">Add Data</button>
+                    <button type="reset" class="btn btn-outline-warning">Reset</button>
+                  </div>
+                </div>
+              </form>
+              <!-- users edit account form ends -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- users edit ends -->
+    </div>
+
+  </div>
+</div>
+<!-- END: Content-->
+
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
